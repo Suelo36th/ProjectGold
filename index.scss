@@ -1,0 +1,212 @@
+$primary: #fed136;
+$header-height: 300px;
+$section-padding: 120px;
+$section-color-alt: #f7f7f7;
+$page-menu-size: 180px;
+
+@import "lib/bootstrap/scss/bootstrap.scss";
+
+.page-header {
+  background-image: url("images/header-background.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: 50% 0%;
+}
+
+.navbar-dark .navbar-brand {
+  color: $primary;
+  font-style: italic;
+  padding-top: 1.5rem;
+}
+
+.heading-jumbo {
+  height: 90vh;
+  padding-bottom: 55px;
+
+  @include media-breakpoint-up(sm) {
+    height: $header-height + 50px;
+  }
+  @include media-breakpoint-up(md) {
+    height: $header-height + 100px;
+  }
+  @include media-breakpoint-up(lg) {
+    height: $header-height + 150px;
+  }
+}
+
+.services {
+  padding-top: $section-padding;
+  padding-bottom: $section-padding;
+
+  p {
+    font-size: 0.8rem;
+    margin: 0px;
+  }
+
+  h5,
+  h3 {
+    margin: 0px;
+  }
+  .services-icon {
+    font-size: 2rem;
+    border: 2px solid $primary;
+    width: 4rem;
+    height: 4rem;
+    border-radius: 50%;
+    margin: 0px auto;
+    text-align: center;
+    color: $primary;
+    line-height: 3.75rem;
+    margin-bottom: 2rem;
+  }
+}
+
+.services-heading {
+  margin-bottom: 2.5rem;
+}
+
+.portfolio {
+  padding-top: $section-padding;
+  padding-bottom: $section-padding;
+
+  background-color: $section-color-alt;
+}
+ 
+.aboutus {
+  padding-top: $section-padding;
+  padding-bottom: $section-padding; 
+
+  .aboutus-img {
+    border-radius: 50%;
+    border: 5px solid $section-color-alt;
+  }
+  @include media-breakpoint-up(md) {
+    .aboutus-list {
+      background: linear-gradient(to right, 
+      white 0%,
+      white calc(50% - 1px), 
+      $section-color-alt calc(50% - 1px),
+      $section-color-alt calc(50% + 1px),
+      white calc(50% + 1px), 
+      white 100%);
+    }
+
+    .row:last-child{
+      background-color: white;
+    }
+}
+}
+
+
+.team {
+  padding-top: $section-padding;
+  padding-bottom: $section-padding;
+  background-color: $section-color-alt;
+
+  .team-img {
+    border: 5px solid white;
+    border-radius: 50%;
+  }
+
+  .team-social {
+    color: black;
+    font-size: 1.5rem;
+    text-decoration: none;
+    border: 2px solid black;
+    border-radius: 50%;
+    display: block;
+    text-align: center;
+    width: 3rem;
+    height: 3rem;
+    margin: 0.12rem;
+
+
+    &:hover {
+      text-decoration: none;
+    }
+  }
+}
+
+
+.contact {
+  padding-top: $section-padding;
+  padding-bottom: $section-padding;
+  background-color: #222;
+  color: white;
+
+  .contact-message {
+    height: 5rem;
+  }
+  
+  @include media-breakpoint-up(sm) {
+  .contact-message {
+    height: 100%;
+  }
+  }
+}
+
+.footer {
+  .footer-icon {
+    height: 2rem;
+    width: 2rem;
+    background-color: black;
+    color: white;
+    border-radius: 50%;
+    text-align: center;
+    text-decoration: none;
+    margin: 0.2rem;
+
+    &:hover{
+    text-decoration: none;
+    }
+  }
+}
+
+html, body { 
+  overflow-x: hidden ;
+}
+
+body {
+  overflow-x: relative;
+}
+
+#page {
+  position: relative;
+  left: 0px;
+  transition: 0.8s all;
+  transform: translate(0px,0px);
+
+  &.mobile-nav-open {
+    transform: translate(-$page-menu-size, 0px);
+    ;
+    ;
+  }
+
+  .mobile-nav {
+    position: fixed;
+    right: -$page-menu-size;
+    width: $page-menu-size;
+    top: 0px;
+    bottom: 0px;
+    background-color: $section-color-alt;
+
+  }
+
+  .mobile-nav-link {
+    color: black;
+    border-left: 0px solid transparent;
+    border-right: 0px solid transparent;
+    background-color: $section-color-alt;
+
+    &:last-child {
+      border-bottom-left-radius: 0px;
+      border-bottom-right-radius: 0px;
+    }
+    &:first-child {
+      border-top-left-radius: 0px;
+      border-top-right-radius: 0px;
+    }
+  }
+}
+
+
