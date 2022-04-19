@@ -15,6 +15,8 @@ Bootstrap includes many [CSS custom properties (variables)](https://developer.mo
 Here are the variables we include (note that the `:root` is required) that can be accessed anywhere Bootstrap's CSS is loaded. They're located in our `_root.scss` file and included in our compiled dist files.
 
 ```css
+
+{%raw%}
 {{< root.inline >}}
 {{- $css := readFile "dist/css/bootstrap.css" -}}
 {{- $match := findRE ":root {([^}]*)}" $css 1 -}}
@@ -26,6 +28,8 @@ Here are the variables we include (note that the `:root` is required) that can b
 {{- index $match 0 -}}
 
 {{< /root.inline >}}
+
+{% endraw %}
 ```
 
 ## Component variables
